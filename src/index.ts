@@ -1,3 +1,5 @@
+
+
 export default async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);
   const path = url.pathname;
@@ -17,5 +19,6 @@ export default async function handler(req: Request): Promise<Response> {
   if (module[method]) {
     return module[method](req);
   }
+
   return new Response("Method not implemented", { status: 500 });
 }
